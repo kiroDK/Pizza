@@ -1,5 +1,5 @@
 import axios from "axios";
-import { get } from "mongoose";
+// import { get } from "mongoose";
 export const placeOrder = (token, subtotal) => async (dispatch, getState) => {
   dispatch({ type: "PLACE_ORDER_REQUEST" });
   const currentUser = getState().loginUserReducer.currentUser;
