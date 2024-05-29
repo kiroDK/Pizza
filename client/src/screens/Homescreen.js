@@ -3,16 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { getAllPizzas } from "../actions/pizzaActions";
 import Pizza from "../components/Pizza";
 import Loading from "../components/Loading";
-import Error from "../components/Error"
+import Error from "../components/Error";
 
 export default function Homescreen() {
   const dispatch = useDispatch();
   const pizzasstate = useSelector((state) => state.getAllPizzasReducer);
 
   const { pizzas, error, loading } = pizzasstate;
+  
   useEffect(() => {
     dispatch(getAllPizzas());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -20,7 +21,7 @@ export default function Homescreen() {
         {loading ? (
           <Loading/>
         ) : error ? (
-          <Error error="Something went Wrong"/>
+          <Error error="Something went wrong"/>
         ) : (
           pizzas.map((pizza) => {
             return (
@@ -36,4 +37,3 @@ export default function Homescreen() {
     </div>
   );
 }
-

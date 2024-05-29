@@ -20,5 +20,6 @@ app.get("/", (req, res) => {
 });
 
 const port = process.env.PORT || 8000;
+// const port = process.env.PORT;
 
 app.listen(port, () => `Server running on the port 🔥`);

@@ -30,7 +30,7 @@ export default function Checkout({ subtotal }) {
         amount={subtotal * 100}
         shippingAddress
         token={tokenHandler}
-        stripeKey="pk_test_51NYsCySA451Nv2E6yWC9LCxVPsNc5GM4bA6n6ROefvwD06ubGSL27IhC5UvAAee0EBumJ0CTe8qtksfCYPeQj4TK00bc9B5E1q"
+        stripeKey={process.env.REACT_APP_STRIPE_KEY}
         currency="INR"
       >
         <button className="btn">Pay Now</button>
